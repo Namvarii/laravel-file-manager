@@ -1,18 +1,16 @@
 # Laravel File Manager
 
-[![Latest Stable Version](https://poser.pugx.org/alexusmai/laravel-file-manager/v/stable)](https://packagist.org/packages/alexusmai/laravel-file-manager)
-[![Total Downloads](https://poser.pugx.org/alexusmai/laravel-file-manager/downloads)](https://packagist.org/packages/alexusmai/laravel-file-manager)
-[![Latest Unstable Version](https://poser.pugx.org/alexusmai/laravel-file-manager/v/unstable)](https://packagist.org/packages/alexusmai/laravel-file-manager)
-[![License](https://poser.pugx.org/alexusmai/laravel-file-manager/license)](https://packagist.org/packages/alexusmai/laravel-file-manager)
-
+[![Latest Stable Version](http://poser.pugx.org/alexusmai/laravel-file-manager/v)](https://packagist.org/packages/alexusmai/laravel-file-manager)
+[![Total Downloads](http://poser.pugx.org/alexusmai/laravel-file-manager/downloads)](https://packagist.org/packages/alexusmai/laravel-file-manager)
+[![Latest Unstable Version](http://poser.pugx.org/alexusmai/laravel-file-manager/v/unstable)](https://packagist.org/packages/alexusmai/laravel-file-manager)
+[![License](http://poser.pugx.org/alexusmai/laravel-file-manager/license)](https://packagist.org/packages/alexusmai/laravel-file-manager)
+[![PHP Version Require](http://poser.pugx.org/alexusmai/laravel-file-manager/require/php)](https://packagist.org/packages/alexusmai/laravel-file-manager)
 
 ![Laravel File Manager](https://raw.github.com/alexusmai/vue-laravel-file-manager/master/src/assets/laravel-file-manager.gif?raw=true)
 
 **DEMO:** [Laravel File Manager](http://file-manager.webmai.ru/)
 
 **Vue.js Frontend:** [alexusmai/vue-laravel-file-manager](https://github.com/alexusmai/vue-laravel-file-manager)
-
-**--- Laravel 7 support added but not fully tested!! ---**
 
 ## Documentation
 
@@ -66,58 +64,11 @@
 * Events (v2.2)
 * Thumbnails lazy load
 * Dynamic configuration (v2.4)
-* Supported locales : ru, en, ar, sr, cs, de, es, nl, zh-CN, fa, it, tr, fr, pt_BR
+* Supported locales : ru, en, ar, sr, cs, de, es, nl, zh-CN, fa, it, tr, fr, pt-BR, zh-TW, pl
 
-## In a new version 2.4
+## In a new version 3
 
-Now you can create your own config repositories, it will allow to change your configuration dynamically.
-
-How to do it:
-
-Create new class - example - TestConfigRepository
-
-```php
-namespace App\Http;
-
-use Alexusmai\LaravelFileManager\Services\ConfigService\ConfigRepository;
-
-class TestConfigRepository implements ConfigRepository
-{
-    // implement all methods from interface
-}
-```
-
-For example see [src/Services/ConfigService/DefaultConfigRepository.php](https://github.com/alexusmai/laravel-file-manager/blob/master/src/Services/ConfigService/DefaultConfigRepository.php)
-
-## Upgrading to version 2.4
-
-Update pre-compiled css and js files and config file - file-manager.php 
-
-
-```php
-// config
-php artisan vendor:publish --tag=fm-config --force
-// js, css
-php artisan vendor:publish --tag=fm-assets --force
-```
-
-If you use the ACL, now you don't need to add the acl middleware to configuration.
-
-```php
-//======= In old versions ==========
-'acl' => true,
-
-// add acl middleware to your array
-'middleware' => ['web', 'fm-acl'],
-
-//======= In a new version =========
-'acl' => true,
-
-'middleware' => ['web'],
-```
-
-## Contributors
-
-[![](https://sourcerer.io/fame/alexusmai/alexusmai/laravel-file-manager/images/0)](https://sourcerer.io/fame/alexusmai/alexusmai/laravel-file-manager/links/0)[![](https://sourcerer.io/fame/alexusmai/alexusmai/laravel-file-manager/images/1)](https://sourcerer.io/fame/alexusmai/alexusmai/laravel-file-manager/links/1)[![](https://sourcerer.io/fame/alexusmai/alexusmai/laravel-file-manager/images/2)](https://sourcerer.io/fame/alexusmai/alexusmai/laravel-file-manager/links/2)[![](https://sourcerer.io/fame/alexusmai/alexusmai/laravel-file-manager/images/3)](https://sourcerer.io/fame/alexusmai/alexusmai/laravel-file-manager/links/3)[![](https://sourcerer.io/fame/alexusmai/alexusmai/laravel-file-manager/images/4)](https://sourcerer.io/fame/alexusmai/alexusmai/laravel-file-manager/links/4)[![](https://sourcerer.io/fame/alexusmai/alexusmai/laravel-file-manager/images/5)](https://sourcerer.io/fame/alexusmai/alexusmai/laravel-file-manager/links/5)[![](https://sourcerer.io/fame/alexusmai/alexusmai/laravel-file-manager/images/6)](https://sourcerer.io/fame/alexusmai/alexusmai/laravel-file-manager/links/6)[![](https://sourcerer.io/fame/alexusmai/alexusmai/laravel-file-manager/images/7)](https://sourcerer.io/fame/alexusmai/alexusmai/laravel-file-manager/links/7)
-
-
+- **Version 3 only works with Laravel 9!**
+- Vue.js 3
+- Bootstrap 5
+- Bootstrap Icons

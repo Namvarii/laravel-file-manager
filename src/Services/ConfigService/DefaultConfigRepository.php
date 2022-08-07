@@ -10,13 +10,24 @@ namespace Alexusmai\LaravelFileManager\Services\ConfigService;
 class DefaultConfigRepository implements ConfigRepository
 {
     /**
+     * LFM Route prefix
+     * !!! WARNING - if you change it, you should compile frontend with new prefix(baseUrl) !!!
+     *
+     * @return string
+     */
+    final public function getRoutePrefix(): string
+    {
+        return config('file-manager.routePrefix');
+    }
+
+    /**
      * Get disk list
      *
      * ['public', 'local', 's3']
      *
      * @return array
      */
-    public function getDiskList(): array
+    final public function getDiskList(): array
     {
         return config('file-manager.diskList');
     }
@@ -28,7 +39,7 @@ class DefaultConfigRepository implements ConfigRepository
      *
      * @return string|null
      */
-    public function getLeftDisk(): ?string
+    final public function getLeftDisk(): ?string
     {
         return config('file-manager.leftDisk');
     }
@@ -40,7 +51,7 @@ class DefaultConfigRepository implements ConfigRepository
      *
      * @return string|null
      */
-    public function getRightDisk(): ?string
+    final public function getRightDisk(): ?string
     {
         return config('file-manager.rightDisk');
     }
@@ -52,7 +63,7 @@ class DefaultConfigRepository implements ConfigRepository
      *
      * @return string|null
      */
-    public function getLeftPath(): ?string
+    final public function getLeftPath(): ?string
     {
         return config('file-manager.leftPath');
     }
@@ -64,7 +75,7 @@ class DefaultConfigRepository implements ConfigRepository
      *
      * @return string|null
      */
-    public function getRightPath(): ?string
+    final public function getRightPath(): ?string
     {
         return config('file-manager.rightPath');
     }
@@ -77,7 +88,7 @@ class DefaultConfigRepository implements ConfigRepository
      *
      * @return int|null
      */
-    public function getCache(): ?int
+    final public function getCache(): ?int
     {
         return config('file-manager.cache');
     }
@@ -91,7 +102,7 @@ class DefaultConfigRepository implements ConfigRepository
      *
      * @return int
      */
-    public function getWindowsConfig(): int
+    final public function getWindowsConfig(): int
     {
         return config('file-manager.windowsConfig');
     }
@@ -101,7 +112,7 @@ class DefaultConfigRepository implements ConfigRepository
      *
      * null - no restrictions
      */
-    public function getMaxUploadFileSize(): ?int
+    final public function getMaxUploadFileSize(): ?int
     {
         return config('file-manager.maxUploadFileSize');
     }
@@ -111,7 +122,7 @@ class DefaultConfigRepository implements ConfigRepository
      *
      * [] - no restrictions
      */
-    public function getAllowFileTypes(): array
+    final public function getAllowFileTypes(): array
     {
         return config('file-manager.allowFileTypes');
     }
@@ -121,7 +132,7 @@ class DefaultConfigRepository implements ConfigRepository
      *
      * @return bool
      */
-    public function getHiddenFiles(): bool
+    final public function getHiddenFiles(): bool
     {
         return config('file-manager.hiddenFiles');
     }
@@ -134,7 +145,7 @@ class DefaultConfigRepository implements ConfigRepository
      *
      * @return array
      */
-    public function getMiddleware(): array
+    final public function getMiddleware(): array
     {
         return config('file-manager.middleware');
     }
@@ -146,7 +157,7 @@ class DefaultConfigRepository implements ConfigRepository
      *
      * @return bool
      */
-    public function getAcl(): bool
+    final public function getAcl(): bool
     {
         return config('file-manager.acl');
     }
@@ -158,7 +169,7 @@ class DefaultConfigRepository implements ConfigRepository
      *
      * @return bool
      */
-    public function getAclHideFromFM(): bool
+    final public function getAclHideFromFM(): bool
     {
         return config('file-manager.aclHideFromFM');
     }
@@ -172,7 +183,7 @@ class DefaultConfigRepository implements ConfigRepository
      *
      * @return string
      */
-    public function getAclStrategy(): string
+    final public function getAclStrategy(): string
     {
         return config('file-manager.aclStrategy');
     }
@@ -184,7 +195,7 @@ class DefaultConfigRepository implements ConfigRepository
      *
      * @return string
      */
-    public function getAclRepository(): string
+    final public function getAclRepository(): string
     {
         return config('file-manager.aclRepository');
     }
@@ -196,8 +207,20 @@ class DefaultConfigRepository implements ConfigRepository
      *
      * @return int|null
      */
-    public function getAclRulesCache(): ?int
+    final public function getAclRulesCache(): ?int
     {
         return config('file-manager.aclRulesCache');
+    }
+
+    /**
+     * Whether to slugify filenames
+     *
+     * boolean
+     *
+     * @return bool|null
+     */
+    final public function getSlugifyNames(): ?bool
+    {
+        return config('file-manager.slugifyNames', false);
     }
 }

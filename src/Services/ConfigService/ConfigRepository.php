@@ -10,6 +10,14 @@ namespace Alexusmai\LaravelFileManager\Services\ConfigService;
 interface ConfigRepository
 {
     /**
+     * LFM Route prefix
+     * !!! WARNING - if you change it, you should compile frontend with new prefix(baseUrl) !!!
+     *
+     * @return string
+     */
+    public function getRoutePrefix(): string;
+
+    /**
      * Get disk list
      *
      * ['public', 'local', 's3']
@@ -152,4 +160,13 @@ interface ConfigRepository
      * @return int|null
      */
     public function getAclRulesCache(): ?int;
+
+    /**
+     * Whether to slugify filenames
+     *
+     * boolean
+     *
+     * @return bool|null
+     */
+    public function getSlugifyNames(): ?bool;
 }
